@@ -1,0 +1,23 @@
+<h1>Hamacs#index</h1>
+<p>Find me in app/views/hamacs/index.html.erb</p>
+<h1 class="text-center">Your hamacs list</h1>
+
+<div class="text-center padded">
+  <%= link_to "Choose this hamac", hamac_path, class: "btn btn-primary" %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @hamacs.each do |hamac| %>
+      <h2><%= hamac.address %></h2>
+      <p><%= hamac.description %></p>
+      <p><%= hamac.price %></p>
+      <%=link_to "edit", edit_hamac_path(hamac)%>
+      <%=link_to "delet", hamac_path(hamac),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+      <%=link_to "show", hamac_path(hamac)%>
+    <% end %>
+  </div>
+</div>
+
