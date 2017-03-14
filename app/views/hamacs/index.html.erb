@@ -1,15 +1,42 @@
-<h1>Hamacs#index</h1>
-<p>Find me in app/views/hamacs/index.html.erb</p>
-<h1 class="text-center">Your hamacs list</h1>
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+  <div class="card-description">
+  <h1 class="text-center">Your hamacs list</h1>
+    <p>Find your hamac everywhere</p>
+  </div>
+  <img class="card-user avatar" src="user.jpg">
+  <a class="card-link" href="#" ></a>
+</div>
 <div class="container">
   <div class="row">
+    <div class="col-xs-12 col-sm-4">
     <% @hamacs.each do |hamac| %>
-      <h2><%= hamac.name %></h2>
-      <p><%= hamac.address %></p>
-      <p><%= hamac.description %></p>
-      <p><%= hamac.price %></p>
-      <p><%= hamac.disponibility %></p>
-    <% end %>
+        <h2><%= hamac.name %></h2>
+        <p><%= hamac.address %></p>
+        <p><%= hamac.description %></p>
+        <p><%= hamac.price %></p>
+        <p><%= hamac.disponibility %></p>
+      <% end %>
+      <!-- insert <div class="card"> -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+    <% @hamacs.each do |hamac| %>
+        <h2><%= hamac.name %></h2>
+        <p><%= hamac.address %></p>
+        <p><%= hamac.description %></p>
+        <p><%= hamac.price %></p>
+        <p><%= hamac.disponibility %></p>
+      <% end %>
+      <!-- insert <div class="card"> -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+    <% @hamacs.each do |hamac| %>
+        <h2><%= hamac.name %></h2>
+        <p><%= hamac.address %></p>
+        <p><%= hamac.description %></p>
+        <p><%= hamac.price %></p>
+        <p><%= hamac.disponibility %></p>
+      <% end %>
+      <!-- insert <div class="card"> -->
+    </div>
   </div>
 </div>
-
