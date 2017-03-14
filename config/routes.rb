@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :bookings, only: [ :index ] do
       member do
         patch 'cancel'
+      end
     end
   end
 

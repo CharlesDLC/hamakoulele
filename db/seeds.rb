@@ -25,11 +25,12 @@ x = User.create!(first_name: "X", last_name: "IceCube", address: "Berlin", descr
 
 # hamac
 User.all.each do
-  5.times do
+  5.times doac
   User.create! \
     address: Faker::Address.city,
     price: Faker::Number.between(1, 10),
     description: Faker::LordOfTheRings.character
+  end
 end
 
 
