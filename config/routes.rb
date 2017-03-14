@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'hamacs/index'
+
   devise_for :users
   root to: 'pages#home'
 
