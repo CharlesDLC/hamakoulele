@@ -9,14 +9,11 @@
 <div class="container">
   <div class="row">
     <% @hamacs.each do |hamac| %>
-      <h2><%= hamac.address %></h2>
+      <h2><%= hamac.name %></h2>
+      <p><%= hamac.address %></p>
       <p><%= hamac.description %></p>
       <p><%= hamac.price %></p>
-      <%=link_to "edit", edit_hamac_path(hamac)%>
-      <%=link_to "delet", hamac_path(hamac),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-      <%=link_to "show", hamac_path(hamac)%>
+      <p><%= hamac.disponibility %></p>
     <% end %>
   </div>
 </div>
