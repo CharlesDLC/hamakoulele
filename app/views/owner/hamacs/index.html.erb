@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <div class="container" id="relative">
+
+    <h1>My Hamacs</h1>
+
+    <% @current_user.hamacs.each do |hamac| %>
+      <div class="row">
+        <div class="col-xs-6">
+          <%= image_tag hamac.photo.url %>
+          <%= hamac.name %>
+          <%= hamac.price %> €
+          <% if hamac.disponibility %>
+            Available
+          <% else %>
+            Busy
+          <% end %>
+        </div>tege
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
