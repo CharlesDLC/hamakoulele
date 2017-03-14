@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Booking.destroy_all
+Hamac.destroy_all
+User.destroy_all
 # users
 momo = User.create!(first_name: "momo", last_name: "Batman", address: "Angers", description: "XX", email: "momo@gmail.com", password: "123456", password_confirmation: "123456")
 john = User.create!(first_name: "john", last_name: "Mckaine", address: "Dallas", description: "M&S", email: "john@gmail.com", password: "123456", password_confirmation: "123456")
@@ -24,16 +27,21 @@ x = User.create!(first_name: "X", last_name: "IceCube", address: "Berlin", descr
 
 
 # hamac
-User.all.each do
-  5.times do
-  Hamac.create! \
-    address: Faker::Address.city,
-    price: Faker::Number.between(1, 10),
-    description: Faker::LordOfTheRings.character
-  end
-  3.times do
-    Booking.create! \
-    status: %w(cancelled pending accepted refused).sample
+User.all.each do |user|
+  5.times do |index|
+    hamac = Hamac.create! \
+      name: Faker::LordOfTheRings.character,
+      photo: File.new(Rails.root.join("db/fixtures/images/hamacs/#{index}.jpg")),
+      user: user,
+      address: Faker::Address.city,
+      price: Faker::Number.between(1, 10),
+      description: Faker::LordOfTheRings.character
+    3.times do
+      Booking.create! \
+        user: User.all.sample,
+        hamac: hamac,
+        status: %w(cancelled pending accepted refused).sample
+    end
   end
 end
 
