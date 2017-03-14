@@ -1,0 +1,10 @@
+<h1>Your Hamac</h1>
+
+<%= simple_form_for @hamac do |hamac| %>
+  <%= f.input :name %>
+  <%= f.input :photo %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.submit "Add the Hamac", class: "btn btn-primary" %>
+<% end %>

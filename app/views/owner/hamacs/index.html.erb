@@ -1,34 +1,31 @@
-<head>
-  <link rel="stylesheet" href="index/style.css">
-</head>
+<div class="wrapper">
+  <div class="container" id="relative">
 
-<body>
+    <h1>My Hamacs</h1>
 
-
-<div>
-  <h2>Pending Requests</h2>
-  <% @pending_hamacs.each do |h| %>
-    <ul>
-      <li><%= h.name %></li>
-    </ul>
-  <% end %>
-</div>
-
-<div>
-<h2>Currently booked</h2>
-  <% @booked_hamacs.each do |h| %>
-    <ul>
-      <li><%= h.name - "Booked by #{@booking_user.first_name} #{@booking_user.last_name}"%>
-        <%= link_to "Accept", owner_hamacs_path, class: "btn btn-success" %>
-        <%= link_to "Refuse", owner_hamacs_path, class: "btn btn-warning" %>
-      </li>
-    </ul>
-  <% end %>
+    <% @current_user.hamacs.each do |hamac| %>
+      <div class="row">
+        <div class="col-xs-6">
+          <%= image_tag hamac.photo.url %>
+          <%= hamac.name %>
+          <%= hamac.price %> €
+          <% if hamac.disponibility %>
+            Available
+          <% else %>
+            Busy
+          <% end %>
+        </div>tege
+      </div>
+    <% end %>
+  </div>
 </div>
 
 
 
-</body>
+
+
+
+
 
 
 

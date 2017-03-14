@@ -1,10 +1,7 @@
 class Owner::HamacsController < ApplicationController
 
   def index
-    @pending_hamacs = current_users.hamacs.where { booking.status == "pending"}
-    @booking_user = current_users.where { user.hamac = hamac }
-    @booked_hamacs = current_users.hamacs.where { booking.status == "accepted"}
-    @other_hamacs = current_users.hamacs.where { disponibility == true }
+    @hamacs = current_user.hamacs
   end
 
   def new
@@ -13,6 +10,11 @@ class Owner::HamacsController < ApplicationController
 
   def create
     @hamac = Hamac.new(hamac_params)
+    if @hamac.save
+      redirect_to owner_hamacs
+    else
+      render :new
+    end
   end
 
   def show
@@ -21,13 +23,17 @@ class Owner::HamacsController < ApplicationController
   end
 
   def edit
-    @hamac =
+    @hamac = Hamac.find(params[:id])
   end
 
   def update
+    @hamac.update(hamac_params)
+    redirect_to owner_hamac_path(@hamac)
   end
 
   def destroy
+    @hamac.destroy
+    redirect_to owner_hamacs_path
   end
 
   private
