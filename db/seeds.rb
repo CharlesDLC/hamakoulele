@@ -28,13 +28,14 @@ x = User.create!(first_name: "X", last_name: "IceCube", address: "Berlin", descr
 
 # hamac
 User.all.each do |user|
-  5.times do
-  hamac = Hamac.create! \
-    name: Faker::LordOfTheRings.character,
-    user: user,
-    address: Faker::Address.city,
-    price: Faker::Number.between(1, 10),
-    description: Faker::LordOfTheRings.character
+  5.times do |index|
+    hamac = Hamac.create! \
+      name: Faker::LordOfTheRings.character,
+      photo: File.new(Rails.root.join("db/fixtures/images/hamacs/#{index}.jpg")),
+      user: user,
+      address: Faker::Address.city,
+      price: Faker::Number.between(1, 10),
+      description: Faker::LordOfTheRings.character
     3.times do
       Booking.create! \
         user: User.all.sample,
