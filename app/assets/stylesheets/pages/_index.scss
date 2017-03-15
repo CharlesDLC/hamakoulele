@@ -13,6 +13,11 @@
   margin-top: 20px;
 }
 
+.card :hover {
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+}
+
 .card-name {
   position: absolute;
   top: 10px;
