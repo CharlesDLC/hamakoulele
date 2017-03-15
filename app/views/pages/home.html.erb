@@ -12,7 +12,7 @@
         </form> -->
         <div class="form-group">
           <%= form_tag(hamacs_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search a city for your hamac" %>
+          <%= text_field_tag :search, params[:search], : placeholder: "Search a city for your hamac" %>
           <%= submit_tag "Search", :name => nil %>
           <% end %>
         </div>
