@@ -1,22 +1,26 @@
 <div class="wrapper">
-  <div class="container" id="relative">
-
-    <h1>My Hamacs</h1>
-
-    <% @current_user.hamacs.each do |hamac| %>
-      <div class="row">
-        <div class="col-xs-6">
-          <%= image_tag hamac.photo.url %>
-          <%= hamac.name %>
-          <%= hamac.price %> €
-          <% if hamac.disponibility %>
-            Available
-          <% else %>
-            Busy
-          <% end %>
-        </div>tege
-      </div>
-    <% end %>
+  <h1 class="text-center">My Hamacs</h1>
+  <div class="container">
+    <div class="row">
+      <% @current_user.hamacs.each do |hamac| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card">
+            <h4 class="card-name"><%= hamac.name %></h4>
+            <p class="card-price"><%= hamac.price %> €</p>
+            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hamac.photo, height: 300, width: 400, crop: :fill %>');">
+              <div class="card-category">
+                <% if hamac.disponibility %>
+                  <span class="label label-success">Available</span>
+                <% else %>
+                  <span class="label label-danger">Not available</span>
+                <% end %>
+              </div>
+            </div>
+            <p class="card-address"><%= hamac.address %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
