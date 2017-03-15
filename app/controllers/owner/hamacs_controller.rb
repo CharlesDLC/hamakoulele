@@ -38,6 +38,7 @@ class Owner::HamacsController < ApplicationController
 
   def self.search(search)
     where()
+  end
 
   private
 
