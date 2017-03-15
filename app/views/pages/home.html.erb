@@ -25,11 +25,12 @@
 <!-- #suggestion carts -->
 <div class="wrapper">
   <h1 class="text-center">Some Hamacs Suggestions</h1>
-      <div class="container">
-        <div class="row">
-          <% @hamacs.each do |hamac| %>
-            <div class="col-xs-12 col-sm-4">
-              <div class="card">
+    <div class="container">
+      <div class="row">
+        <% @hamacs.each do |hamac| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card">
+              <%= link_to hamac_path(hamac) do %>
                 <h3 class="card-name"><%= hamac.name %></h3>
                 <p class="card-price"><%= hamac.price %> €</p>
                 <div class="card-photo-background">
@@ -44,13 +45,14 @@
                   </div>
                 </div>
                 <!-- <img src="images/papillard.jpeg" class="avatar"> -->
-                <p class="card-address"><%= hamac.address %></p>
-              </div>
+              <p class="card-address"><%= hamac.address %></p>
             </div>
           <% end %>
         </div>
-      </div>
+      <% end %>
     </div>
+  </div>
+</div>
 
 
 
