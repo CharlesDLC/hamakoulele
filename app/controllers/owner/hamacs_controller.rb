@@ -36,6 +36,9 @@ class Owner::HamacsController < ApplicationController
     redirect_to owner_hamacs_path
   end
 
+  def self.search(search)
+    where()
+
   private
 
   def hamac_params

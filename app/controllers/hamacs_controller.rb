@@ -7,5 +7,4 @@ class HamacsController < ApplicationController
   def show
     @hamac = Hamac.find(params[:id])
   end
-
 end
