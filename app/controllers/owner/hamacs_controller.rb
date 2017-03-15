@@ -40,7 +40,7 @@ class Owner::HamacsController < ApplicationController
     where()
   end
 
-  private
+private
 
   def hamac_params
     params.require(:hamac).permit(:name, :description, :photo, :price, :disponibility, :address)
