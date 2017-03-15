@@ -10,11 +10,14 @@
           <input type="text" class="form-control" id="home-search" placeholder="Search"></input>
            <input type="submit" class="btn btn-primary btn-lg" value="Find my place"></input>
         </form> -->
-        <%= form_tag(hamacs_path, :method => "get", id: "search-form") do %>
-        <%= text_field_tag :search, params[:search], placeholder: "Search a city for your hamac" %>
-        <%= submit_tag "Search", :name => nil %>
-        <% end %>
+        <div class="form-group">
+          <%= form_tag(hamacs_path, :method => "get", id: "search-form") do %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search a city for your hamac" %>
+          <%= submit_tag "Search", :name => nil %>
+          <% end %>
+        </div>
       </div>
+              <%= link_to 'list all hamacs', hamacs_path %>
     </div>
   </div>
 </div>
