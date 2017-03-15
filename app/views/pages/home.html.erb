@@ -1,2 +1,49 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+
+<!-- #big home photo -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'home-page.jpg'%>) ">
+  <div class="banner-content">
+    <div class="text-center">
+      <h1>Discover the best place to rest in a Hamac</h1>
+      <p> discover the our best places</p>
+      <div class="form-size">
+        <form class="form-group">
+          <input type="text" class="form-control" placeholder="Search"></input>
+           <input type="submit" class="btn btn-primary btn-lg" value="Find my place"></input>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- #suggestion carts -->
+<div class="wrapper">
+  <h1 class="text-center">Some Hamacs Suggestions</h1>
+      <div class="container">
+        <div class="row">
+          <% @hamacs.each do |hamac| %>
+            <div class="col-xs-12 col-sm-4">
+              <div class="card">
+                <h3 class="card-name"><%= hamac.name %></h3>
+                <p class="card-price"><%= hamac.price %> €</p>
+                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hamac.photo, height: 300, width: 400, crop: :fill %>');">
+                  <div class="card-category">
+                    <% if hamac.disponibility %>
+                      <span class="label label-success">Available</span>
+                    <% else %>
+                      <span class="label label-danger">Not available</span>
+                    <% end %>
+                  </div>
+                </div>
+                <!-- <img src="images/papillard.jpeg" class="avatar"> -->
+                <p class="card-address"><%= hamac.address %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
