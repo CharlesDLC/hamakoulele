@@ -10,5 +10,6 @@ class HamacsController < ApplicationController
 
   def show
     @hamac = Hamac.find(params[:id])
+    @alert_message = "You are viewing #{@hamac.name}"
   end
 end
