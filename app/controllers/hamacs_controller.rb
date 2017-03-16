@@ -11,5 +11,6 @@ class HamacsController < ApplicationController
   def show
     @hamac = Hamac.find(params[:id])
     @alert_message = "You are viewing #{@hamac.name}"
+    @hamac_coordinates = { lat: @hamac.latitude, lng: @hamac.longitude }
   end
 end
