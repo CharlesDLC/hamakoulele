@@ -36,7 +36,11 @@ class Owner::HamacsController < ApplicationController
     redirect_to owner_hamacs_path
   end
 
-  private
+  def self.search(search)
+    where()
+  end
+
+private
 
   def hamac_params
     params.require(:hamac).permit(:name, :description, :photo, :price, :disponibility, :address)

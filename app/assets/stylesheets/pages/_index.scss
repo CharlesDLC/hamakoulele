@@ -16,6 +16,10 @@
   margin-top: 20px;
 }
 
+// .hamac-one :hover {
+//   transform: scale(1.1);
+// }
+
 .card-name {
   position: absolute;
   top: 10px;
@@ -42,7 +46,13 @@
     color: white;
     position: relative;
     top: 68px;
+    transition: .2s ease-in-out;
 }
+
+.card-photo-background :hover {
+    transform: scale(1.1);
+
+  }
 .card-address {
   position: absolute;
   bottom: 10px;

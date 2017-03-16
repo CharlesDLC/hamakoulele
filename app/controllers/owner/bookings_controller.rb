@@ -1,1 +1,2 @@
-bookings_controller.rb
+class Owner::BookingsController < ApplicationController
+end

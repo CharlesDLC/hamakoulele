@@ -2,63 +2,67 @@
 .wrapper {
   background-color: #E0F2E9;
   padding: 50px;
+  height: 650px;
 }
 
-.show_container {
+// .show_container {
 
-}
+// }
 
-.show_card_name_status_button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 10px;
-}
+// .show_card_name_status_button {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+//   padding-top: 10px;
+// }
 
-.show_card-price {
-  margin: 0px;
-}
+// .show_card-price {
+//   margin: 0px;
+// }
 
-.show_card-name {
-  margin: 0px;
-}
-
-.show_price_dispo {
-  display: flex;
-  align-items: center;
-  p {
-  padding-right: 5px;
-  font-size: 25px;
-  }
-
-
-}
 // .show_card-name {
-//   position: absolute;
-//   top: 30px;
-//   left: 550px;
-//   // margin-top: 0px !important;
-//   // padding: 10px 15px;
+//   margin: 0px;
 // }
 
-// .show_card-dispo {
-//   position: absolute;
-//   top: 8px;
-//   right: 50px;
+// .show_price_dispo {
+//   display: flex;
+//   align-items: center;
+//   p {
+//   padding-right: 5px;
+//   font-size: 25px;
+//   }
+
+
 // }
+// // .show_card-name {
+// //   position: absolute;
+// //   top: 30px;
+// //   left: 550px;
+// //   // margin-top: 0px !important;
+// //   // padding: 10px 15px;
+// // }
+
+.show_card-dispo {
+  position: absolute;
+  top: 8px;
+  right: 50px;
+  margin-top: 5px;
+  margin-right: 150px;
+}
 
 .btn-medium {
-  margin-left: 10px;
+  margin-left: 90px;
+  margin-top: 50px;
   padding: 0 20px;
   border-radius: 20em;
-  line-height: 40px;
-  background-color: blue;
-  color: white;
+  line-height: 80px;
+  background-color: #ffff99;
+  color: red;
   font-size: 14px;
-  border: 2px solid blue;
+  border: 2px solid #80ffcc;
 }
 .btn-medium:hover {
-  color: white;
+  color: #ffff99;
   background: #D23333;
   border-color: #ac2626;
 }
@@ -72,7 +76,20 @@
     bottom: 100px;
 }
 
-.show_card_description {
-  align-text: center;
-}
+// .show_card_description {
+//   align-text: center;
+// }
 
+// .row {
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+// }
+
+.card {
+    position: absolute;
+    background-color: white;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 100px;
+
+}

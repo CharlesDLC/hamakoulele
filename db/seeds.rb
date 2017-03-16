@@ -24,13 +24,24 @@ david = User.create!(first_name: "david", last_name: "Trezeguooool", address: "B
 jody = User.create!(first_name: "jody", last_name: "Vanden", address: "Melburn", description: "Surf", email: "laurent@gmail.com", password: "123456", password_confirmation: "123456")
 x = User.create!(first_name: "X", last_name: "IceCube", address: "Berlin", description: "NON", email: "jody@gmail.com", password: "123456", password_confirmation: "123456")
 
-
+nom_hamac = [
+              'hamac au bord de plage',
+              'hamac au bord d\'une riviere',
+              'hamac avec vue sur un volcan',
+              'hamac confortable avec superbe vue',
+              'hamac petit prix',
+              'hamac tip top location',
+              'hamac d\'epoque',
+              'hamac avec moustiquaire',
+              'hamac prevu pour deux',
+              'hamac pour amoureux'
+        ]
 
 # hamac
 User.all.each do |user|
   5.times do |index|
     hamac = Hamac.create! \
-      name: Faker::LordOfTheRings.character,
+      name: nom_hamac.sample,
       photo: File.new(Rails.root.join("db/fixtures/images/hamacs/#{index}.jpg")),
       user: user,
       address: Faker::Address.city,
@@ -42,6 +53,7 @@ User.all.each do |user|
         hamac: hamac,
         status: %w(cancelled pending accepted refused).sample
     end
+    puts "#{index +1} hamac créer "
   end
 end
 
