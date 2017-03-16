@@ -1,11 +1,25 @@
-@import "home";
-@import "show";
-
 .card {
   position: relative;
   background-color: white;
-  height: 400px;
+  height: 300px;
   margin-top: 20px;
+}
+
+// .hamac-one :hover {
+//   transform: scale(1.1);
+// }
+
+.card-name {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  margin-top: 0px !important;
+}
+
+.card-price {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 
 .card-category {
@@ -15,7 +29,7 @@
 }
 
 .card-image {
-    height: 275px;
+    height: 175px;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
     background-size: cover !important;
     color: white;
@@ -24,7 +38,7 @@
     transition: .2s ease-in-out;
 }
 
-.card-photo-background :hover {
+.card-photo-background:hover {
     transform: scale(1.1);
 
   }
@@ -32,12 +46,4 @@
   position: absolute;
   bottom: 10px;
   left: 10px;
-}
-
-.avatar {
-  border-radius: 50%;
-  border-style: solid 2px grey;
-  // position: absolute;
-  right: 10px;
-  bottom: 10px;
 }

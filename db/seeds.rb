@@ -28,7 +28,7 @@ nom_hamac = [
               'hamac au bord de plage',
               'hamac au bord d\'une riviere',
               'hamac avec vue sur un volcan',
-              'hamac confortable avec superbe vue',
+              'hamac confortable avec vue',
               'hamac petit prix',
               'hamac tip top location',
               'hamac d\'epoque',
@@ -37,14 +37,26 @@ nom_hamac = [
               'hamac pour amoureux'
         ]
 
+
+address = [
+          'Jl. Kajeng at Juwuk Manis, Ubud 80571, Indonésie',
+          'Banjar Kepitu, Desa Tagalalan, Ubud 80572, Indonésie',
+          '10c Yen Thai Str., Old Quarter Hoan, Hanoï 0084, Vietnam',
+          'La Rigole | Route du littoral, Capesterre 97140, Guadeloupe',
+          'Pointe Du Bout, Trois-Ilets 97229, Martinique',
+          '28 Rue du lagon 97434 Saint Gilles Les Bains Ile de Réunion',
+          'B.P. 380, Nosy Mitsio 2007, Madagascar',
+          'Sandstone Mountains, Isalo, Madagascar',
+          '5314 route des Lacs 40600, BISCARROSSE LAC France'
+          ]
 # hamac
 User.all.each do |user|
-  5.times do |index|
+  3.times do |index|
     hamac = Hamac.create! \
       name: nom_hamac.sample,
       photo: File.new(Rails.root.join("db/fixtures/images/hamacs/#{index}.jpg")),
       user: user,
-      address: Faker::Address.city,
+      address: address.sample,
       price: Faker::Number.between(1, 10),
       description: Faker::LordOfTheRings.character
     3.times do
@@ -53,7 +65,7 @@ User.all.each do |user|
         hamac: hamac,
         status: %w(cancelled pending accepted refused).sample
     end
-    puts "#{index +1} hamac créer "
+    puts "#{index +1} hamac créé "
   end
 end
 
