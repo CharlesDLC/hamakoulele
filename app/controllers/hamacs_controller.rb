@@ -1,5 +1,14 @@
 class HamacsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [ :index, :show ]
   def index
-    @hamacs = Hamac.all
+    if params[:search] != nil
+      @hamacs = Hamac.where( "address ILike ?",  "%#{params[:search]}%")
+    else
+      @hamacs = Hamac.all
+    end
+  end
+
+  def show
+    @hamac = Hamac.find(params[:id])
   end
 end
