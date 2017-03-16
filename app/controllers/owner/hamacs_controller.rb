@@ -38,8 +38,9 @@ class Owner::HamacsController < ApplicationController
 
   def self.search(search)
     where()
+  end
 
-  private
+private
 
   def hamac_params
     params.require(:hamac).permit(:name, :description, :photo, :price, :disponibility, :address)

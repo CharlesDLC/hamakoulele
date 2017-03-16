@@ -12,14 +12,14 @@
         </form> -->
         <div class="form-group">
           <%= form_tag(hamacs_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], : placeholder: "Search a city for your hamac" %>
+          <%= text_field_tag :search, params[:search], placeholder: "Search a city for your hamac" %>
           <%= submit_tag "Search", :name => nil %>
           <% end %>
         </div>
       </div>
               <%= link_to 'list all hamacs', hamacs_path %>
     </div>
-  </div>
+  </div>gi
 </div>
 
 <!-- #suggestion carts -->
@@ -32,13 +32,15 @@
               <div class="card">
                 <h3 class="card-name"><%= hamac.name %></h3>
                 <p class="card-price"><%= hamac.price %> €</p>
-                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hamac.photo, height: 300, width: 400, crop: :fill %>');">
-                  <div class="card-category">
-                    <% if hamac.disponibility %>
-                      <span class="label label-success">Available</span>
-                    <% else %>
-                      <span class="label label-danger">Not available</span>
-                    <% end %>
+                <div class="card-photo-background">
+                  <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hamac.photo, height: 300, width: 400, crop: :fill %>');">
+                    <div class="card-category">
+                      <% if hamac.disponibility %>
+                        <span class="label label-success">Available</span>
+                      <% else %>
+                        <span class="label label-danger">Not available</span>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
                 <!-- <img src="images/papillard.jpeg" class="avatar"> -->
