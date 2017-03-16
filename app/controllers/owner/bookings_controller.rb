@@ -1,6 +1,6 @@
 class Owner::BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all.where { }
+    @booked_hamacs_owner = current_user.bookings_as_owner
   end
 end
