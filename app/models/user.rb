@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :hamacs
   has_many :bookings
-  validates :first_name, presence: true
   validates :email, presence: true, uniqueness: true
+  mount_uploader :picture, ProfilePictureUploader
 end
 
 
