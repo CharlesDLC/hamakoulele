@@ -2,10 +2,43 @@
 @import "owner/hamacs";
 @import "show";
 
+.card {
+  position: relative;
+  background-color: white;
+  height: 400px;
+  margin-top: 20px;
+}
 
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
 
+.card-image {
+    height: 275px;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+    background-size: cover !important;
+    color: white;
+    position: relative;
+    top: 68px;
+    transition: .2s ease-in-out;
+}
 
+.card-photo-background :hover {
+    transform: scale(1.1);
 
+  }
+.card-address {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
 
-
-
+.avatar {
+  border-radius: 50%;
+  border-style: solid 2px grey;
+  // position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
