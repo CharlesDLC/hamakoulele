@@ -10,10 +10,11 @@
       </div>
     </div>
     <ul class="list-group list-group-flush">
-      <li class="list-group-item">@hamac.name</li>
-      <li class="list-group-item">@hamac.description</li>
-      <li class="list-group-item">@hamac.price</li>
-      <li class="list-group-item">@hamac.address</li>
+      <li class="list-group-item"><%=@hamac.name %></li>
+      <li class="list-group-item"><%=@hamac.description%></li>
+      <li class="list-group-item"><%=@hamac.price%> €</li>
+      <li class="list-group-item"><%=@hamac.address%></li>
+      <!-- /!\ NEED TO DO THE PATH TO THE BOOKING -->
       <a href="#" class="btn-medium">Book now</a>
     </ul>
   </div>
