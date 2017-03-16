@@ -1,17 +1,13 @@
-<h1>New Hamac</h1>
-
-<!-- <form action="\">
-  <input type="name"  value = "Hamac's name" >
-  <input type="photo" value = "Upload Image" >
-  <input type="price" value = "Your Price" >
-  <input type="description" value = "Describe your Hamac" >
-</form -->
-
-<%= simple_form_for @hamac do |h| %>
-  <%= h.input :name, placeholder: "Hamac's name" %>
-  <%= h.input :photo, placeholder: "Upload image" %>
-  <%= h.input :price, placeholder: "Your Price" %>
-  <%= h.input :description, placeholder: "Describe your Hamac" %>
-  <%= h.input :address, placeholder: "Where it can be picked" %>
-  <%= h.submit "Add the Hamac", class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="form-container">
+    <h1>New Hamac</h1>
+    <%= simple_form_for @hamac do |h| %>
+      <%= h.input :name, placeholder: "Hamac's name" %>
+      <%= h.input :photo, placeholder: "Upload image" %>
+      <%= h.input :price, placeholder: "Your Price" %>
+      <%= h.input :description, placeholder: "Describe your Hamac" %>
+      <%= h.input :address, placeholder: "Where it can be picked" %>
+      <%= h.submit "Add the Hamac", class: "btn btn-primary" %>
+    <% end %>
+  <div>
+<div>

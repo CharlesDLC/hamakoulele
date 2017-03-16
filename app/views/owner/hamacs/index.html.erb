@@ -1,25 +1,33 @@
 <div class="wrapper">
-  <h1 class="text-center">My Hamacs</h1>
-  <div class="container">
-    <div class="row">
-      <% @current_user.hamacs.each do |hamac| %>
-        <div class="col-xs-12 col-sm-4">
-          <div class="card">
-            <h4 class="card-name"><%= hamac.name %></h4>
-            <p class="card-price"><%= hamac.price %> €</p>
-            <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hamac.photo, height: 300, width: 400, crop: :fill %>');">
-              <div class="card-category">
-                <% if hamac.disponibility %>
-                  <span class="label label-success">Available</span>
-                <% else %>
-                  <span class="label label-danger">Not available</span>
-                <% end %>
+  <div class="add-button">
+  <%= link_to new_owner_hamac_path do %>
+    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+  <% end %>
+  </div>
+    <h1 class="text-center">My Hamacs</h1>
+    <div class="container">
+      <div class="row">
+        <% @hamacs.each do |hamac| %>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card">
+              <h4 class="card-name"><%= hamac.name %></h4>
+              <p class="card-price"><%= hamac.price %> €</p>
+              <div class="card-photo-background">
+                <div class="card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path hamac.photo, height: 300, width: 400, crop: :fill %>');">
+                  <div class="card-category">
+                    <% if hamac.disponibility %>
+                      <span class="label label-success">Available</span>
+                    <% else %>
+                      <span class="label label-danger">Not available</span>
+                    <% end %>
+                  </div>
+                </div>
               </div>
+              <p class="card-address"><%= hamac.address %></p>
             </div>
-            <p class="card-address"><%= hamac.address %></p>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
