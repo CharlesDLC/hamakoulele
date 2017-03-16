@@ -2,24 +2,21 @@
 <!-- #big home photo -->
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'home-page.jpg'%>) ">
   <div class="banner-content">
-    <div class="text-center">
-      <h1>Discover the best place to rest in a Hamac</h1>
-      <p> discover the our best places</p>
-      <div class="form-size">
-        <!-- <form class="form-group">
-          <input type="text" class="form-control" id="home-search" placeholder="Search"></input>
-           <input type="submit" class="btn btn-primary btn-lg" value="Find my place"></input>
-        </form> -->
-        <div class="form-group">
-          <%= form_tag(hamacs_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search a city for your hamac" %>
-          <%= submit_tag "Search", :name => nil %>
-          <% end %>
+    <h1>Discover the best place to rest in a Hamac</h1>
+    <p> discover the our best places</p>
+    <div class="searchbar-flex">
+      <form method="get" action="/hamacs" class="search_form-flex">
+        <div class="search_input-flex">
+          <label for="hamac_name" id="label_city">Where?</label>
+          <input type="text" id="search" name="search" placeholder="hamacs location" id="hamac_name">
         </div>
-      </div>
-              <%= link_to 'list all hamacs', hamacs_path %>
+        <div class="search_input-flex">
+          <input type="submit" value="Search"  class=" btn-danger">
+        </div>
+      </form>
+      <%= link_to 'List all hamacs', hamacs_path %>
     </div>
-  </div>gi
+  </div>
 </div>
 
 <!-- #suggestion carts -->
