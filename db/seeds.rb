@@ -28,7 +28,7 @@ nom_hamac = [
               'hamac au bord de plage',
               'hamac au bord d\'une riviere',
               'hamac avec vue sur un volcan',
-              'hamac confortable avec superbe vue',
+              'hamac confortable avec vue',
               'hamac petit prix',
               'hamac tip top location',
               'hamac d\'epoque',
@@ -53,7 +53,7 @@ User.all.each do |user|
         hamac: hamac,
         status: %w(cancelled pending accepted refused).sample
     end
-    puts "#{index +1} hamac créer "
+    puts "#{index +1} hamac créé "
   end
 end
 
