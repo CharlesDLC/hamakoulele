@@ -4,14 +4,61 @@
 <br>
 <br>
   <% @bookings_for_owner.each do |booking| %>
-    <ul>
-      <li><%= booking.hamac.name %> - <em>Booked by</em> :
-      <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", profile_path %>
-      <a class="btn btn-success" href="">Accept</a>
-      <a class="btn btn-danger" href="">Refuse</a>
-      </li>
-    </ul>
+    <% if booking.status == "pending" %>
+      <ul>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 owner-booking-information">
+            <li><%= booking.hamac.name %> - <%= booking.status %> - <em>Booked by</em> :
+            <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", profile_path %>
+      <!--       <a class="btn btn-success" href="">Accept</a>
+            <a class="btn btn-danger" href="">Refuse</a> -->
+          </div>
+          <div class="col-xs-12 col-sm-3 owner-button">
+          <%= link_to "Refuse", refuse_owner_booking_path(booking), method: :patch, class: "btn btn-danger" %>
+          <%= link_to "Accept", accept_owner_booking_path(booking), method: :patch, class: "btn btn-success" %>
+          </div>
+          </li>
+        </div>
+      </ul>
+    <% end %>
   <% end %>
 
+<h1>Accepted Requests</h1>
+<br>
+<br>
+<br>
+  <% @bookings_for_owner.each do |booking| %>
+    <% if booking.status == "accepted" %>
+      <ul>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 owner-booking-information">
+            <li><%= booking.hamac.name %> - <%= booking.status %> - <em>Booked by</em> :
+            <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", profile_path %>
+      <!--       <a class="btn btn-success" href="">Accept</a>
+            <a class="btn btn-danger" href="">Refuse</a> -->
+          </div>
+          </li>
+        </div>
+      </ul>
+    <% end %>
+  <% end %>
 
-
+<h1>Refused Requests</h1>
+<br>
+<br>
+<br>
+  <% @bookings_for_owner.each do |booking| %>
+    <% if booking.status == "refused" %>
+      <ul>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 owner-booking-information">
+            <li><%= booking.hamac.name %> - <%= booking.status %> - <em>Booked by</em> :
+            <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", profile_path %>
+      <!--       <a class="btn btn-success" href="">Accept</a>
+            <a class="btn btn-danger" href="">Refuse</a> -->
+          </div>
+          </li>
+        </div>
+      </ul>
+    <% end %>
+  <% end %>
