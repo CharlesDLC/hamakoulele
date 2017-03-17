@@ -5,11 +5,21 @@
 <br>
   <% @bookings_for_owner.each do |booking| %>
     <ul>
-      <li><%= booking.hamac.name %> - <em>Booked by</em> :
-      <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", profile_path %>
-      <a class="btn btn-success" href="">Accept</a>
-      <a class="btn btn-danger" href="">Refuse</a>
-      </li>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4 owner-booking-information">
+          <li><%= booking.hamac.name %> - <em>Booked by</em> :
+          <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", profile_path %>
+    <!--       <a class="btn btn-success" href="">Accept</a>
+          <a class="btn btn-danger" href="">Refuse</a> -->
+        </div>
+        <div class="col-xs-12 col-sm-3 owner-button">
+        <%= link_to "Accept", accept_owner_booking_path(booking), method: :patch %>
+        <button type="button" class="btn btn-success" data-target="#booking-now">Accept</button>
+        <button type="button" class="btn btn-danger" data-target="#booking-now">Refuse</button>
+        </div>
+        </li>
+      </div>
+
     </ul>
   <% end %>
 
