@@ -1,13 +1,15 @@
-<div class="container">
-  <div class="form-container">
-    <h1>New Hamac</h1>
-    <%= simple_form_for @hamac do |h| %>
-      <%= h.input :name, placeholder: "Hamac's name" %>
-      <%= h.input :photo, placeholder: "Upload image" %>
-      <%= h.input :price, placeholder: "Your Price" %>
-      <%= h.input :description, placeholder: "Describe your Hamac" %>
-      <%= h.input :address, placeholder: "Where it can be picked" %>
-      <%= h.submit "Add the Hamac", class: "btn btn-primary" %>
-    <% end %>
+<div class="wrapper">
+  <div class="container">
+    <div class="form-container">
+      <h1>New Hamac</h1>
+      <%= simple_form_for @hamac, url: owner_hamacs_path do |h| %>
+        <%= h.input :name, placeholder: "Hamac's name" %>
+        <%= h.input :photo, placeholder: "Upload image" %>
+        <%= h.input :price, placeholder: "Your Price" %>
+        <%= h.input :description, placeholder: "Describe your Hamac" %>
+        <%= h.input :address, placeholder: "Where it can be picked" %>
+        <%= h.submit "Add the Hamac", class: "btn btn-primary" %>
+      <% end %>
+    </div>
   <div>
 <div>
