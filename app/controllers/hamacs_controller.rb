@@ -6,11 +6,18 @@ class HamacsController < ApplicationController
     else
       @hamacs = Hamac.all
     end
+    @hamacs = Hamac.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@flats) do |hamac, marker|
+      marker.lat hamac.latitude
+      marker.lng hamac.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
   end
 
   def show
     @hamac = Hamac.find(params[:id])
-    @alert_message = "You are viewing #{@hamac.name}"
-    @hamac_coordinates = { lat: @hamac.latitude, lng: @hamac.longitude }
+    @hamac_coordinates = [{ lat: @hamac.latitude, lng: @hamac.longitude }]
+    # binding.pry
   end
 end
