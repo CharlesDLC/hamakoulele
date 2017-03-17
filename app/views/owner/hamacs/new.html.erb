@@ -5,6 +5,7 @@
       <%= simple_form_for @hamac, url: owner_hamacs_path do |h| %>
         <%= h.input :name, placeholder: "Hamac's name" %>
         <%= h.input :photo, placeholder: "Upload image" %>
+        <%= h.input :photo_cache, as: :hidden %>
         <%= h.input :price, placeholder: "Your Price" %>
         <%= h.input :description, placeholder: "Describe your Hamac" %>
         <%= h.input :address, placeholder: "Where it can be picked" %>

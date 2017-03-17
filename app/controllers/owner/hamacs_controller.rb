@@ -10,8 +10,9 @@ class Owner::HamacsController < ApplicationController
 
   def create
     @hamac = Hamac.new(hamac_params)
+    @hamac.user = current_user
     if @hamac.save
-      redirect_to owner_hamacs
+      redirect_to owner_hamacs_path
     else
       render :new
     end
@@ -42,6 +43,6 @@ class Owner::HamacsController < ApplicationController
 private
 
   def hamac_params
-    params.require(:hamac).permit(:name, :description, :photo, :price, :disponibility, :address)
+    params.require(:hamac).permit(:name, :description, :photo, :photo_cache, :price, :disponibility, :address)
   end
 end
