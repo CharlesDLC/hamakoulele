@@ -44,6 +44,12 @@
   }
 .card-address {
   position: absolute;
-  bottom: 10px;
+  bottom: -10px;
   left: 10px;
+  // padding: -10px;
+  vertical-align: center;
+}
+
+h3 {
+  font-size: 21px;
 }
