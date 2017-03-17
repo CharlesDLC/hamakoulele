@@ -1,14 +1,17 @@
 
-<h2>Pending Requests</h2>
-  <% @booked_hamacs_owner.each do |h| %>
+<h1>Pending Requests</h1>
+<br>
+<br>
+<br>
+  <% @bookings_for_owner.each do |booking| %>
     <ul>
-      <li><%= h.name - "Booked by #{@user_id.first_name} #{@user_id.last_name}"%>
-        <%= link_to "Accept", owner_hamacs_path, class: "btn btn-success" %>
-        <%= link_to "Refuse", owner_hamacs_path, class: "btn btn-warning" %>
+      <li><%= booking.hamac.name %> - <em>Booked by</em> :
+      <%= link_to "#{booking.user.first_name} #{booking.user.last_name}", profile_path %>
+      <a class="btn btn-success" href="">Accept</a>
+      <a class="btn btn-danger" href="">Refuse</a>
       </li>
     </ul>
   <% end %>
 
-<!--   @user_id = Booking.user_id.last_name
-      @booked_hamacs_owner = Booking.hamac_id.name -->
+
 
