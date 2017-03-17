@@ -1,8 +1,8 @@
 
-<div class="wrapper">
+<div class="wrapper_show">
   <div class="row">
     <div class="col-xs-6">
-      <div class="card" style="width: 30rem;">
+      <div class="card_show" style="width: 30rem;">
         <div class="show_card-image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @hamac.photo, height: 300, width: 400, crop: :fill %>');">
 <!-- container avec la photo + la map geolocalisation -->
           <% if @hamac.disponibility %>
@@ -18,7 +18,7 @@
         <li class="list-group-item"><%=@hamac.price%> €</li>
         <li class="list-group-item"><%=@hamac.address%></li>
     <!-- /!\ NEED TO DO THE PATH TO THE BOOKING -->
-        <a href="#" class="btn-medium">Book it now!</a>
+        <a href="#index" class="btn-medium_show">Book it now!</a>
       </ul>
     </div>
 <div class="col-xs-6">
