@@ -43,13 +43,12 @@
         <li class="list-group-item"><%=@hamac.price%> €</li>
         <li class="list-group-item"><%=@hamac.address%></li>
         </ul>
-      <button type="button" class="btn btn-danger" >Confirm Booking!</button>
+        <%= link_to "Confirm Booking!", hamac_bookings_path(@hamac), method: :post, class: "btn btn-danger" %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-
   </div>
 </div>
 
